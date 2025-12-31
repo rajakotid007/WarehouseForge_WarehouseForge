@@ -1,4 +1,4 @@
-# Snowflake ELT Pipeline with dbt and Airflow
+# WarehouseForge | Snowflake ELT Pipeline with dbt and Airflow
 
 Welcome to the Snowflake ELT Pipeline project! 🚀 This repository showcases a complete end-to-end data pipeline built using cutting-edge technologies, including Snowflake, dbt (Data Build Tool), and Apache Airflow. Dive into the details to see how modern data engineering practices can transform and orchestrate data efficiently.
 
@@ -17,26 +17,28 @@ Welcome to the Snowflake ELT Pipeline project! 🚀 This repository showcases a 
 
 ## Project Overview
 
-This project demonstrates the process of extracting data from the TPCH orders table in Snowflake's sample database, loading it into a Snowflake data warehouse, and transforming it using dbt. The pipeline is orchestrated with Apache Airflow, ensuring robust and automated workflow management.
+This project implements a complete ELT workflow using the **TPCH Orders** table from Snowflake’s sample database. Raw data is loaded directly into Snowflake and transformed using **dbt models** to produce analytics-ready datasets. The entire pipeline is orchestrated with **Apache Airflow**, ensuring automated, repeatable, and observable execution.
 
 ### Key Components
 
 1. **Data Source**:
-   - **TPCH Orders Table**: The raw data source located in the Snowflake sample database.
+   - **TPCH Orders Table**: Source data derived from Snowflake’s built-in TPCH sample dataset, representing transactional order records.
 
 2. **Data Storage**:
-   - **Snowflake**: Utilized as the data warehouse for storing the raw and transformed data.
+   - **Snowflake**: Serves as the central data warehouse for raw, staging, and transformed datasets.
 
-3. **Data Transformation**:
+ **Data Transformation**:
    - **dbt (Data Build Tool)**:
-     - **Source Tables**: Definition and management of source tables.
-     - **Staging Tables**: Intermediate tables for raw data processing.
-     - **Transformed Models**: Creation of fact tables and data marts.
-     - **Macro Functions**: Implementation of functions, including discount price calculations.
-     - **Testing**: Generic and singular tests to ensure data integrity.
+     - **Source Definitions**: Explicit declaration and management of raw source tables.
+     - **Staging Models**: Intermediate models to clean, standardize, and prepare raw data.
+     - **Transformed Models**: Fact tables and analytical models designed for reporting and downstream consumption.
+     - **Macros**: Reusable transformation logic, including business calculations such as discounted pricing.
+     - **Testing & Data Quality**: Generic and singular tests to validate data integrity and business rules.
 
 4. **Data Orchestration**:
-   - **Apache Airflow**: Used to orchestrate and automate the data pipeline workflows.
+   - **Apache Airflow**: Orchestrates dbt executions, manages task dependencies, and handles scheduling and retries.
+
+---
 
 
 
